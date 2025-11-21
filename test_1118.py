@@ -3,7 +3,7 @@ import importlib.util
 from decimal import Decimal
 
 # 載入有空格和括號的檔案路徑為模組
-spec = importlib.util.spec_from_file_location("mod1118", r"c:\Users\User\Downloads\1118 (1).py")
+spec = importlib.util.spec_from_file_location("mod1118", r"c:\Users\User\Downloads\lib_1118.py")
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
 
