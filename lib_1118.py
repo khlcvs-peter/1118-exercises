@@ -36,7 +36,9 @@ def compute_compound_amounts(principal: Decimal, annual_rate: Decimal, months: i
     amounts = []
     for _ in range(months):
         amount += amount * monthly_rate
-        amounts.append(amount)
+        # 以貨幣表示四捨五入到小數點後兩位
+        amount_q = amount.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+        amounts.append(amount_q)
     return amounts
 
 def input_decimal(prompt):
